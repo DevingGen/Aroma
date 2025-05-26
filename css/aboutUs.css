@@ -1,0 +1,174 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f8f1e9;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
+
+.team {
+    padding: 80px 0;
+    background-color: #f8f1e9;
+    text-align: center;
+    margin-top: 0;
+}
+
+.team h2 {
+    font-size: 2.5rem;
+    color: #d4a373;
+    margin-bottom: 50px;
+}
+
+.teamContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 0 20px;
+    justify-content: center;
+}
+
+.teamMember {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.memberImage {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.memberImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.memberInfo h3 {
+    color: #d4a373;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.memberInfo p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.journey {
+    padding: 210px 0 80px 0;
+    background-color: white;
+}
+
+.journey h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #d4a373;
+    margin-bottom: 50px;
+}
+
+.journeyContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+}
+
+.journeyImages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.journeyImage {
+    width: 220px;
+    height: 300px;
+}
+
+.journeyImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.journeyText {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    text-align: left;
+}
+
+.journeyText p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    text-align: left;
+    margin: 0;
+}
+
+.footer {
+    background-color: #d4a373;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.socialLinks {
+    margin-bottom: 20px;
+}
+
+.socialLinks a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.socialLinks img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.socialLinks img:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .team h2,
+    .journey h2 {
+        font-size: 2rem;
+    }
+
+    .memberInfo p,
+    .journeyText p {
+        font-size: 1rem;
+    }
+}
+
+.sectionLine {
+    width: 180px;
+    height: 8px;
+    background: #d4a373;
+    margin: 4px auto 32px auto;
+    border-radius: 4px;
+}

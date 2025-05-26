@@ -1,0 +1,811 @@
+body {
+    margin: 0;
+    padding: 0 1px;
+    background-color: #3e2c21;
+    color: #f8f1e9;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    width: 100%;
+    scrollbar-gutter: stable;
+}
+
+.category-container {
+    padding: 20px 0;
+    margin-top: 210px;
+    width: 100%;
+    max-width: unset;
+    margin-left: unset;
+    margin-right: unset;
+    background-color: #3e2c21;
+}
+
+.title-section {
+    text-align: center;
+    padding: 60px 0 40px;
+    background: linear-gradient(to bottom, rgba(212, 163, 115, 0.1), transparent);
+    margin-bottom: 20px;
+}
+
+.main-title {
+    color: #d4a373;
+    font-size: 3.8rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 1.3rem;
+    margin: 10px 0;
+    font-weight: 400;
+}
+
+.title-quote {
+    color: #666;
+    font-size: 1.1rem;
+    font-style: italic;
+    margin: 20px 0 0;
+}
+
+.title-decoration {
+    width: 180px;
+    height: 8px;
+    background: #d4a373;
+    margin: 20px auto;
+    border-radius: 4px;
+    position: relative;
+}
+
+.title-decoration::before,
+.title-decoration::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 8px;
+    background: #d4a373;
+    border-radius: 4px;
+    opacity: 0.5;
+}
+
+.title-decoration::before {
+    left: -80px;
+}
+
+.title-decoration::after {
+    right: -80px;
+}
+
+.title-description {
+    color: #f8f1e9;
+    font-size: 1.6rem;
+    margin: 20px 0 0;
+    font-style: normal;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.coffee-section {
+    margin: 40px 0;
+    padding: 0;
+    text-align: left;
+    background-color: #3e2c21;
+    width: 100%;
+    position: relative;
+}
+
+
+.coffee-section::before,
+.coffee-section::after {
+    display: none;
+}
+
+.section-title {
+    color: #d4a373;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    margin-left: 60px;
+}
+
+.section-title::before,
+.section-title::after {
+    display: none;
+}
+
+.kopiRow {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;
+    padding-left: 60px;
+    padding-right: 60px;
+    box-sizing: border-box;
+}
+
+.kopiRow::-webkit-scrollbar {
+    display: none;
+}
+
+.kopiCard {
+    flex: 0 0 calc((100% / 5) - 16px);
+    height: 380px;
+    background: #2d2019;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    position: unset;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.kopiCard:hover {
+    transform: translateY(-10px);
+    background: #3e2c21;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.kopiCard h3 {
+    color: #d4a373;
+    font-size: 1.6rem;
+    margin: 0 0 15px 0;
+    font-weight: 500;
+    text-shadow: none;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.kopiCard p {
+    color: #f8f1e9;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+    text-shadow: none;
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+}
+
+
+.kopiRow:hover .kopiCard:not(:hover) {
+    opacity: 0.7;
+}
+
+.kopi-pics {
+    width: 100%;
+    height: 210px;
+    position: unset;
+    top: unset;
+    left: unset;
+    background-color: #d4a373;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.kopi-pics.esp {
+    background-image: url('../PopularImages/espresso.jpg');
+}
+
+.kopi-pics.cap {
+    background-image: url('../PopularImages/cappuccino.png');
+}
+
+.kopi-pics.lat {
+    background-image: url('../PopularImages/latte.jpg');
+}
+
+.kopi-pics.ame {
+    background-image: url('../PopularImages/americano.jpg');
+}
+
+.kopi-pics.moc {
+    background-image: url('../PopularImages/mocha.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.kopi-pics.irish {
+    background-image: url('../PopularImages/irishcoffee.png');
+    background-size: cover;
+    background-position: center 30%;
+}
+
+.kopi-pics.aff {
+    background-image: url('../PopularImages/affogato.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.kopi-pics.mac {
+    background-image: url('../PopularImages/macchiato.png');
+    background-size: cover;
+    background-position: center 35%;
+}
+
+.kopi-pics.cm {
+    background-image: url('../PopularImages/cafemistro.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.kopi-pics.tc {
+    background-image: url('../PopularImages/turkishcoffee.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.coffee-content-overlay {
+    display: none;
+}
+
+
+.nav-arrow {
+    position: absolute;
+    top: calc(50% + 40px);
+    bottom: unset;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 67%;
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    color: #f8f1e9;
+    font-size: 90px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    opacity: 0.8;
+}
+
+.nav-arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 1;
+}
+
+.left-arrow {
+    left: 0;
+}
+
+.right-arrow {
+    right: 0;
+}
+
+.nav-arrow:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+/* PARA SA RESPONSIVENESS TO 5/25/2025 */
+
+@media (max-width: 1400px) {
+    .kopiCard {
+        flex: 0 0 calc((100% / 4) - 15px);
+        height: 380px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .kopiCard {
+        flex: 0 0 calc((100% / 3) - 13.33px);
+        height: 380px;
+    }
+}
+
+@media (max-width: 992px) {
+    .main-title {
+        font-size: 3rem;
+        letter-spacing: 2px;
+    }
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    .title-quote {
+        font-size: 1rem;
+    }
+    .title-description {
+        font-size: 1.4rem;
+    }
+    .kopiCard {
+        flex: 0 0 calc((100% / 2) - 10px);
+        height: 380px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+        letter-spacing: 1.5px;
+        padding: 0 5px;
+    }
+    .subtitle {
+        font-size: 1.1rem;
+    }
+    .title-quote {
+        font-size: 0.9rem;
+    }
+    .title-description {
+        font-size: 1.2rem;
+    }
+    .coffee-section {
+        padding: 0 20px;
+    }
+
+    .section-title {
+        margin-left: 20px;
+    }
+
+    .kopiRow {
+        padding: 15px 20px;
+        gap: 10px;
+    }
+
+    .kopiCard {
+        flex: 0 0 calc(100% - 10px);
+        height: 380px;
+    }
+
+    .kopi-pics {
+        height: 200px;
+    }
+
+    .kopiCard h3 {
+        font-size: 1.5rem;
+    }
+
+    .kopiCard p {
+        font-size: 0.9rem;
+    }
+
+    .close-kopi {
+        font-size: 50px;
+        right: 15px;
+        top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+    .subtitle {
+        font-size: 1rem;
+    }
+    .title-quote {
+        font-size: 0.9rem;
+    }
+     .title-description {
+        font-size: 1rem;
+    }
+    .coffee-section {
+        padding: 0 10px;
+    }
+
+    .section-title {
+         margin-left: 10px;
+    }
+
+    .kopiRow {
+        padding: 10px 10px;
+        gap: 8px;
+    }
+
+    .kopiCard {
+        flex: 0 0 calc(100% - 8px);
+        height: 380px;
+    }
+
+    .kopi-pics {
+        height: 150px;
+    }
+
+    .kopiCard h3 {
+        font-size: 1.2rem;
+        margin: 10px 10px 5px 10px;
+    }
+
+    .kopiCard p {
+        font-size: 0.8rem;
+        margin: 0 10px 10px 10px;
+    }
+
+    .close-kopi {
+        font-size: 40px;
+        right: 10px;
+        top: 10px;
+    }
+}
+
+.kopi-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    padding-top: 100px;
+    overflow-y: auto;
+}
+
+.kopi-modal.active {
+    display: block;
+}
+
+.kopi-content {
+    background-color: #3e2c21;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    margin: 0 auto 100px auto;
+    width: 90%;
+    max-width: 950px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.close-kopi {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 60px;
+    color: #f8f1e9;
+    cursor: pointer;
+    z-index: 1001;
+    line-height: 1;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.close-kopi:hover {
+    color: #d4a373;
+}
+
+.kopi-image {
+    width: 100%;
+    height: 270px;
+    min-height: 220px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.kopi-image:hover {
+    transform: scale(1.02);
+}
+
+.kopi-image[style*="irishcoffee.png"] {
+    background-position: center 30%;
+}
+
+.kopi-image[style*="macchiato.png"] {
+    background-position: center 35%;
+}
+
+.kopi-details {
+    color: #f8f1e9;
+    padding: 20px;
+}
+
+.kopi-name {
+    color: #d4a373;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.details-section h3,
+.method-section h3 {
+    color: #d4a373;
+    font-size: 2.3rem;
+    margin-bottom: 15px;
+}
+
+.details-section p {
+    font-size: 1.7rem;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.steps {
+    padding-left: 20px;
+}
+
+.steps li {
+    font-size: 1.6rem;
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+.steps li strong {
+    color: #d4a373;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.steps li a {
+    color: #d4a373;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.steps li a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.steps li em {
+    color: #f8f1e9;
+    opacity: 0.8;
+}
+
+@media (max-width: 1366px) {
+    .kopi-modal {
+        padding-top: 80px;
+    }
+
+    .kopi-content {
+        width: 95%;
+        margin-bottom: 80px;
+    }
+    
+    .kopi-image {
+        height: 220px;
+        min-height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .kopi-modal {
+        padding-top: 70px;
+    }
+
+    .kopi-content {
+        width: 95%;
+        padding: 15px;
+        margin-bottom: 60px;
+    }
+
+    .kopi-image {
+        height: 200px;
+        min-height: 160px;
+    }
+
+    .kopi-name {
+        font-size: 2.5rem;
+    }
+
+    .details-section h3,
+    .method-section h3 {
+        font-size: 2rem;
+    }
+
+    .details-section p {
+        font-size: 1.5rem;
+    }
+
+    .steps li {
+        font-size: 1.5rem;
+        margin: 12px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .kopi-modal {
+        padding-top: 60px;
+    }
+
+    .kopi-content {
+        width: 95%;
+        padding: 10px;
+        margin-bottom: 50px;
+    }
+
+    .kopi-image {
+        height: 180px;
+        min-height: 140px;
+    }
+
+    .kopi-name {
+        font-size: 2.5rem;
+    }
+
+    .details-section h3,
+    .method-section h3 {
+        font-size: 2rem;
+    }
+
+    .details-section p {
+        font-size: 1.5rem;
+    }
+
+    .steps li {
+        font-size: 1.5rem;
+        margin: 10px 0;
+    }
+}
+
+
+.full-kopi {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.full-kopi.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-kopi-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90vh;
+}
+
+.full-kopi-image {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.close-full-kopi {
+    position: absolute;
+    right: -40px;
+    top: -40px;
+    font-size: 60px;
+    color: #f8f1e9;
+    cursor: pointer;
+    z-index: 2001;
+    line-height: 1;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.close-full-kopi:hover {
+    color: #d4a373;
+}
+
+.equipment-section {
+    margin: 20px 0;
+}
+
+.equipment-section h3 {
+    color: #d4a373;
+    font-size: 2.3rem;
+    margin-bottom: 15px;
+}
+
+.equipment-list {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.equipment-list li {
+    font-size: 1.7rem;
+    margin: 10px 0;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 25px;
+}
+
+.equipment-list li::before {
+    content: '•';
+    color: #d4a373;
+    font-size: 2rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+@media (max-width: 768px) {
+    .equipment-section h3 {
+        font-size: 2rem;
+    }
+
+    .equipment-list li {
+        font-size: 1.5rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .equipment-section h3 {
+        font-size: 2rem;
+    }
+
+    .equipment-list li {
+        font-size: 1.5rem;
+    }
+}
+
+.ingredients-section {
+    margin: 20px 0;
+}
+
+.ingredients-section h3 {
+    color: #d4a373;
+    font-size: 2.3rem;
+    margin-bottom: 15px;
+}
+
+.ingredients-list {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.ingredients-list li {
+    font-size: 1.7rem;
+    margin: 10px 0;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 25px;
+}
+
+.ingredients-list li::before {
+    content: '•';
+    color: #d4a373;
+    font-size: 2rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+@media (max-width: 768px) {
+    .ingredients-section h3 {
+        font-size: 2rem;
+    }
+
+    .ingredients-list li {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ingredients-section h3 {
+        font-size: 2rem;
+    }
+
+    .ingredients-list li {
+        font-size: 1.5rem;
+    }
+}

@@ -1,65 +1,149 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-body{
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
+html {
+    scroll-behavior: smooth;
 }
 
-.header{
-  position: sticky;
-  top: 0;
-  display: flex;
-  padding: 20px 0;
-  padding-left: 20px;
-  background-color: #d4a373;
-  outline-color: black;
-  outline-width: 50px;
-  outline-style: auto;
-  z-index: 1000;
-  justify-content: space-between;
-  align-items: center;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #3e2c21;
+    position: relative;
+    overflow-x: hidden;
 }
 
-.websitetitle {
-  color: white;
-  font-size: 2.5rem;
-  margin: 0;
-  padding-left: 5%;
-  font-weight: 700;
-  letter-spacing: 5px;
+body.fade-in {
+    opacity: 1;
 }
 
-.header .subtitle {
-  margin: 0;
-  padding: 0;
-  padding-left: 10%;
-  color: white;
-  font-size: 1.2rem;
-  font-style: italic;
-  opacity: 0.9;
+body.fade-out {
+    opacity: 0;
 }
 
-.header ul{
-  padding-left: 30px;
-  list-style: none;
-  margin-right: 5%;
+.swipe-out {
+    transform: translateX(-100%);
 }
 
-.header li{
-  display: inline;
+.swipe-in {
+    transform: translateX(0);
 }
 
-.header ul li a{
-  color: white;
-  padding: 0 10px;
-  font-size: 14px;
-  text-decoration: none;
-  transition: opacity 0.3s ease;
+.swipe-out-right {
+    transform: translateX(100%) !important;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.header ul li a:hover {
-  opacity: 0.8;
+.swipe-out-left {
+    transform: translateX(-100%) !important;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header {
+    position: fixed;
+    top: 38px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 2% 25px 2%;
+    background-color: rgba(34, 19, 15, 0.95);
+    z-index: 1000;
+    width: 95%;
+    max-width: 2000px;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.logo {
+    height: 7.2rem;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+.header-left .websitetitle {
+    color: white;
+    font-size: 3.6rem;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.header-center {
+    display: flex;
+    align-items: center;
+    flex-grow: 2.5;
+    justify-content: center;
+    margin: 0 4%;
+}
+
+.header-center ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 40px;
+    margin-right: 40px;
+}
+
+.header-center ul li a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.header-center ul li a:hover {
+    color: #d4a373;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.header-right ul li a {
+    background-color: #2d2019;
+    color: #f8f1e9;
+    text-decoration: none;
+    padding: 15px 37.5px;
+    border-radius: 30px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.header-right ul li a:hover {
+    background-color: #3e2c21;
+}
+
+.search-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 8px 15px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    cursor: pointer;
+    min-width: 150px;
 }
 
 .mainpage {
@@ -126,7 +210,7 @@ body{
   letter-spacing: 2px;
 }
 
-.popularContainer {
+.kopisection .popularContainer {
   width: 1250px;
   margin: 0 auto;
   position: relative;
@@ -301,5 +385,331 @@ body{
   background-color: #b88a5f;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.pangTitle {
+    height: 100vh;
+    background-image: url("../images/kopiiiedit.jpeg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: white;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.pangTitle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.titleHolder {
+    position: relative;
+    z-index: 1;
+    text-align: left;
+    margin-right: 0;
+    padding-left: 10%;
+    max-width: 1000px;
+    width: 90%;
+}
+
+.titleHolder h1 {
+    font-size: clamp(3rem, 5vw, 6.75rem);
+    margin: 0 0 30px 0;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #CDA270;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.titleHolder p {
+    font-size: clamp(1rem, 2vw, 1.95rem);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: rgba(248, 241, 233, 0.95);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.kopiQuote {
+    font-size: clamp(1rem, 1.5vw, 1.65rem);
+    font-style: italic;
+    line-height: 1.6;
+    margin-top: 15px;
+    margin-bottom: 157.5px;
+    color: rgba(248, 241, 233, 0.95);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.getStarted {
+    display: inline-block;
+    background-color: #CDA270;
+    color: #f8f1e9;
+    text-decoration: none;
+    padding: clamp(15px, 2vw, 22px) clamp(35px, 4vw, 55px);
+    border-radius: 25px;
+    font-size: clamp(1rem, 1.2vw, 1.56rem);
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    margin-top: 50px;
+}
+
+.getStarted:hover {
+    background-color: #b88a5f;
+}
+
+.hero-features {
+    position: absolute;
+    bottom: 50px;
+    right: 5%;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    z-index: 1;
+}
+
+.feature-card {
+    background-color: rgba(45, 32, 25, 0.85);
+    border-radius: 15px;
+    padding: 43.5px;
+    text-align: center;
+    color: white;
+    width: 268.5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.feature-icon {
+    width: 88.5px;
+    height: 88.5px;
+    background-color: rgba(255, 255, 255, 0.15);
+    margin: 0 auto 21px auto;
+    border-radius: 50%;
+}
+
+.feature-card p {
+    font-size: 1.44rem;
+    margin: 0;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 1920px) {
+    .titleHolder {
+        padding-left: 8%;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .titleHolder {
+        padding-left: 6%;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .titleHolder {
+        padding-left: 5%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .titleHolder {
+        padding-left: 4%;
+        max-width: 90%;
+    }
+    
+    .hero-features {
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .titleHolder {
+        padding-left: 3%;
+        text-align: center;
+    }
+    
+    .hero-features {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .feature-card {
+        width: 80%;
+        max-width: 300px;
+    }
+}
+
+@media screen and (min-resolution: 192dpi) {
+    .titleHolder h1 {
+        font-size: clamp(2.5rem, 4vw, 5rem);
+    }
+    
+    .titleHolder p,
+    .kopiQuote {
+        font-size: clamp(0.9rem, 1.5vw, 1.3rem);
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .feature-card {
+        width: clamp(80px, 12vw, 200px);
+    }
+    
+    .feature-icon {
+        width: clamp(25px, 4vw, 70px);
+        height: clamp(25px, 4vw, 70px);
+    }
+}
+
+@media (max-width: 1600px) {
+     .titleHolder h1 {
+        font-size: 5.75rem;
+     }
+     .titleHolder p,
+     .kopiQuote {
+         font-size: 1.5rem;
+     }
+}
+
+@media (max-width: 1400px) {
+     .titleHolder h1 {
+        font-size: 5rem;
+     }
+     .titleHolder p,
+     .kopiQuote {
+         font-size: 1.4rem;
+     }
+}
+
+@media (max-width: 1200px) {
+     .titleHolder h1 {
+        font-size: 4.25rem;
+     }
+     .titleHolder p,
+     .kopiQuote {
+         font-size: 1.3rem;
+     }
+}
+
+@media (max-width: 1024px) {
+    .titleHolder {
+        padding-left: 5%;
+        max-width: 600px;
+    }
+
+    .titleHolder h1 {
+        font-size: 3.5rem;
+    }
+
+    .titleHolder p,
+    .kopiQuote {
+         font-size: 1.2rem;
+    }
+
+    .hero-features {
+        position: relative;
+        bottom: unset;
+        right: unset;
+        top: unset;
+        transform: none;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 40px;
+        padding: 0 2%;
+        gap: 20px;
+    }
+
+    .feature-card {
+         width: 140px;
+         padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 15px 2%;
+    }
+
+    .header-center {
+        flex-direction: column;
+        gap: 15px;
+        margin-right: 0;
+        margin-top: 15px;
+    }
+
+    .header-center ul {
+        gap: 15px;
+        margin-right: 0;
+    }
+
+    .search-box {
+        min-width: unset;
+        width: 80%;
+    }
+
+    .titleHolder {
+        text-align: center;
+        margin-right: 0;
+        max-width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .titleHolder h1 {
+        font-size: 2.5rem;
+        line-height: 1.1;
+    }
+
+    .titleHolder p,
+    .kopiQuote {
+        font-size: 1rem;
+    }
+
+    .hero-features {
+        flex-direction: column;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: unset;
+        right: unset;
+        gap: 15px;
+        align-items: center;
+        padding: 0;
+    }
+
+    .feature-card {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .titleHolder h1 {
+        font-size: 2rem;
+    }
+
+    .titleHolder p,
+    .kopiQuote {
+        font-size: 0.9rem;
+    }
+
+    .getStarted {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+}
+
+.firstPart, .second-line, .third-line {
+    display: inline-block;
+    white-space: nowrap;
 }
 
