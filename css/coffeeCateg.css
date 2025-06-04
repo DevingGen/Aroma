@@ -267,8 +267,34 @@ body {
     background-image: url('../images/iced-coffee.jpg');
 }
 
-.kopi-pics.f{
-    background-image: url('../images/frappe.webp');
+.kopi-pics.mc{
+    background-image: url('../images/mazagran.jpg');
+}
+
+.kopi-pics.ncb{
+    background-image: url('../images/nitrocoldbrew.jpg');
+}
+
+.kopi-pics.cf{
+    background-image: url('../images/choco-frappe.avif');
+}
+
+.kopi-pics.mf{
+    background-image: url('../images/mochafrappe.webp');
+}
+
+.kopi-pics.sf{
+    background-image: url('../images/strawberry-frapp.jpg');
+}
+
+.kopi-pics.matchaf{
+    background-image: url('../images/matchafrappe.webp');
+}
+
+.kopi-pics.of{
+    background-image: url('../images/oreofrappe.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .coffee-content-overlay {

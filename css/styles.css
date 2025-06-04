@@ -884,3 +884,13 @@ body.fade-out {
 .viewMore:hover {
     background-color: #b88a5f;
 }
+
+
+.lmk_section{
+    text-align: center;
+    background-image: url(../images/popular-coffee-section-background-img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: -80px;
+}
