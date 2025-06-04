@@ -10,7 +10,7 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #3e2c21;
     position: relative;
-    overflow-x: hidden;
+    overflow-x: scroll;
 }
 
 body.fade-in {
@@ -398,6 +398,7 @@ body.fade-out {
     color: white;
     overflow: hidden;
     margin-top: 0;
+    margin-bottom: 0;
 }
 
 .pangTitle::before {
@@ -713,3 +714,173 @@ body.fade-out {
     white-space: nowrap;
 }
 
+.popular-coffee-section{
+    text-align: center;
+    background-image: url(../images/popular-coffee-section-background-img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: -80px;
+}
+.popular-coffee-section-title{
+    padding-top: 40px;
+    justify-content: center;
+    text-align: center;
+    font-size: 100px;
+    color: #CDA270;
+    margin-bottom: 12px;
+}
+
+.popular-coffee-section-desc{
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
+
+.popular-coffee-box-section{
+    margin: 40px 0;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+    position: relative;
+    opacity: 80%;
+}
+
+.coffeeRow {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;
+    padding-left: 60px;
+    padding-right: 60px;
+    box-sizing: border-box;
+}
+
+.coffeeRow::-webkit-scrollbar {
+    display: none;
+}
+
+.coffeeSlot {
+    flex: 0 0 calc((100% / 5) - 16px);
+    height: 380px;
+    background: #2d2019;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    position: unset;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.coffeeSlot:hover{
+    transform: translateY(-10px);
+    background: #3e2c21;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.coffeeSlot:hover .coffeeSlot:not(:hover){
+    opacity: 0.7;
+}
+
+.coffeeSlot {
+    flex: 0 0 calc((100% / 5) - 16px);
+    height: 380px;
+    background: #2d2019;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3sease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    position: unset;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.coffeeSlot h3 {
+    color: #d4a373;
+    font-size: 1.6rem;
+    margin: 0 0 15px 0;
+    font-weight: 500;
+    text-shadow: none;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.coffeeSlot p {
+    color: #f8f1e9;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+    text-shadow: none;
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+}
+
+.coffee-pics {
+    width: 100%;
+    height: 210px;
+    position: unset;
+    top: unset;
+    left: unset;
+    background-color: #d4a373;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.coffee-pics.e{
+    background-image: url(../PopularImages/espresso.jpg);
+}
+
+.coffee-pics.c{
+    background-image: url(../PopularImages/cappuccino.png);
+}
+
+.coffee-pics.lat{
+    background-image: url(../PopularImages/latte.jpg);
+}
+
+.coffee-pics.a{
+    background-image: url(../PopularImages/americano.jpg);
+}
+
+.coffee-pics.moc{
+    background-image: url(../PopularImages/mocha.jpg);
+}
+
+.viewMore {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    background-color: #3e2c21;
+    color: #f8f1e9;
+    text-decoration: none;
+    padding: clamp(15px, 2vw, 22px) clamp(35px, 4vw, 55px);
+    border-radius: 25px;
+    font-size: clamp(1rem, 1.2vw, 1.56rem);
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    margin-top: 50px;
+}
+
+.viewMore:hover {
+    background-color: #b88a5f;
+}

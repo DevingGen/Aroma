@@ -225,6 +225,10 @@ body {
     background-position: center;
 }
 
+.kopi-pics.fw{
+    background-image: url('../images/flatwhite.webp');
+}
+
 .kopi-pics.irish {
     background-image: url('../PopularImages/irishcoffee.png');
     background-size: cover;
@@ -253,6 +257,18 @@ body {
     background-image: url('../PopularImages/turkishcoffee.png');
     background-size: cover;
     background-position: center;
+}
+
+.kopi-pics.cb{
+    background-image: url('../images/coldbrew.webp');
+}
+
+.kopi-pics.ic{
+    background-image: url('../images/iced-coffee.jpg');
+}
+
+.kopi-pics.f{
+    background-image: url('../images/frappe.webp');
 }
 
 .coffee-content-overlay {
