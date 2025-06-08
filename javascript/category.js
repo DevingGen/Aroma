@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const coffeeSections = document.querySelectorAll('.coffee-section');
+    const allSections = document.querySelectorAll('.coffee-section, .popular-coffee-box-section');
 
-    for (let i = 0; i < coffeeSections.length; i++) {
-        const section = coffeeSections[i];
-        const coffeeRow = section.querySelector('.kopiRow');
+    for (let i = 0; i < allSections.length; i++) {
+        const section = allSections[i];
+        const coffeeRow = section.querySelector('.coffeeRow, .kopiRow');
         const leftArrow = section.querySelector('.left-arrow');
         const rightArrow = section.querySelector('.right-arrow');
 
@@ -46,5 +46,45 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
         window.addEventListener('resize', checkArrows);
+    }    
+
+    popularCoffeeRow.parentNode.insertBefore(newLeftArrow, popularCoffeeRow);
+    popularCoffeeRow.parentNode.appendChild(newRightArrow);
+
+    function checkPopularArrows() {
+        if (popularCoffeeRow.scrollLeft <= 5) {
+            newLeftArrow.style.display = 'none';
+        } else {
+            newLeftArrow.style.display = 'flex';
+        }
+        const maxScrollLeft = popularCoffeeRow.scrollWidth - popularCoffeeRow.clientWidth;
+        if (popularCoffeeRow.scrollLeft >= maxScrollLeft - 5) {
+            newRightArrow.style.display = 'none';
+        } else {
+            newRightArrow.style.display = 'flex';
+        }
     }
+
+    checkPopularArrows();
+    popularCoffeeRow.addEventListener('scroll', checkPopularArrows);
+
+    newRightArrow.addEventListener('click', function() {
+        const card = popularCoffeeRow.querySelector('.coffeeSlot');
+        if (!card) return;
+        const cardSize = card.offsetWidth;
+        const gap = parseInt(getComputedStyle(popularCoffeeRow).getPropertyValue('gap')) || 0;
+        const scrollAmount = cardSize * 3 + gap * 3;
+        popularCoffeeRow.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+
+    newLeftArrow.addEventListener('click', function() {
+        const card = popularCoffeeRow.querySelector('.coffeeSlot');
+        if (!card) return;
+        const cardSize = card.offsetWidth;
+        const gap = parseInt(getComputedStyle(popularCoffeeRow).getPropertyValue('gap')) || 0;
+        const scrollAmount = cardSize * 3 + gap * 3;
+        popularCoffeeRow.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    window.addEventListener('resize', checkPopularArrows);
 });

@@ -227,6 +227,9 @@ body {
 
 .kopi-pics.fw{
     background-image: url('../images/flatwhite.webp');
+    background-size: cover;
+    background-position: center 30%;
+
 }
 
 .kopi-pics.irish {
@@ -261,38 +264,126 @@ body {
 
 .kopi-pics.cb{
     background-image: url('../images/coldbrew.webp');
+    background-size: cover;
+    background-position: center;
 }
 
-.kopi-pics.ic{
-    background-image: url('../images/iced-coffee.jpg');
-}
 
 .kopi-pics.mc{
     background-image: url('../images/mazagran.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .kopi-pics.ncb{
     background-image: url('../images/nitrocoldbrew.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .kopi-pics.cf{
     background-image: url('../images/choco-frappe.avif');
+    background-size: cover;
+    background-position: center;
+}
+
+.kopi-pics.breve {
+    background-image: url('../EspressoHOTimg/breve.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.kopi-pics.leche {
+    background-image: url('../EspressoHOTimg/cafeconleche.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.kopi-pics.gib {
+    background-image: url('../EspressoHOTimg/gibraltarCoffee.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.kopi-pics.rom {
+    background-image: url('../EspressoHOTimg/romanocoffee.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.kopi-pics.eye {
+    background-image: url('../EspressoHOTimg/RedEyeCoffeeDrink.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.kopi-pics.cort{
+    background-image: url('../EspressoHOTimg/cortado.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .kopi-pics.mf{
     background-image: url('../images/mochafrappe.webp');
+    background-size: cover;
+    background-position: center;
 }
 
 .kopi-pics.sf{
     background-image: url('../images/strawberry-frapp.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .kopi-pics.matchaf{
     background-image: url('../images/matchafrappe.webp');
+    background-size: cover;
+    background-position: center;
 }
 
 .kopi-pics.of{
     background-image: url('../images/oreofrappe.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.kopi-pics.icedam{
+    background-image: url('../icedCoffeeImg/Iced_Americano.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.kopi-pics.icedcap{
+    background-image: url('../icedCoffeeImg/icedCappucino.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.kopi-pics.icedlatte{
+    background-image: url('../icedCoffeeImg/IcedLatte.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.kopi-pics.icedmocha{
+    background-image: url('../icedCoffeeImg/IcedMocha.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.kopi-pics.jap{
+    background-image: url('../icedCoffeeImg/japanesekopi.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.kopi-pics.shakerato{
+    background-image: url('../icedCoffeeImg/Shakerato.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.kopi-pics.viet{
+    background-image: url('../icedCoffeeImg/Vietnamesekopi.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -308,7 +399,7 @@ body {
     bottom: unset;
     transform: translateY(-50%);
     width: 50px;
-    height: 67%;
+    height: 390px;
     border-radius: 0;
     background: rgba(0, 0, 0, 0.6);
     border: none;
@@ -511,7 +602,7 @@ body {
     max-width: 950px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
 }
 
 .close-kopi {
@@ -533,7 +624,8 @@ body {
 
 .kopi-image {
     width: 100%;
-    height: 270px;
+    height: 300px;
+    min-height: 250px;
     min-height: 220px;
     background-size: cover;
     background-position: center;
