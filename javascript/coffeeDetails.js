@@ -968,6 +968,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 const video = videoSection.querySelector('video');
 
+                
 
                 video.style.width = '100%';
                 video.style.maxHeight = '300px'; 
