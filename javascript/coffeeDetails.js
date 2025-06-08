@@ -52,6 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const coffeeData = {
         'Espresso': {
             image: 'PopularImages/espresso.jpg',
+            video: 'videos/SparkleVIDMP4.mp4',  // Mag aadd ka nito every data // gumawa ako ng video file
+            videoPoster: 'PopularImages/espresso.jpg', // ito pa di ko pa nalagay so need nya nasa pagitan ng image saka video poster 
             taste: 'Rich, Strong, Bitter',
             caffeine: 'High (63mg)',
             origin: 'Italy, 1901',
@@ -869,107 +871,157 @@ document.addEventListener('DOMContentLoaded', function() {
         
     };
 
-    coffeeCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const coffeeName = this.querySelector('h3').textContent;
-            const data = coffeeData[coffeeName];
+   coffeeCards.forEach(card => {
+    card.addEventListener('click', function() {
+        const coffeeName = this.querySelector('h3').textContent;
+        const data = coffeeData[coffeeName];
+        
+        if (data) {
+            const rect = this.getBoundingClientRect();
             
-            if (data) {
-                const rect = this.getBoundingClientRect();
-                
-                kopi.style.top = rect.top + 'px';
-                kopi.style.left = rect.left + 'px';
-                kopi.style.width = rect.width + 'px';
-                kopi.style.height = rect.height + 'px';
-                
-                kopi.classList.add('active');
-                
-                setTimeout(() => {
-                    kopi.style.top = '0';
-                    kopi.style.left = '0';
-                    kopi.style.transform = 'none';
-                    kopi.style.width = '100%';
-                    kopi.style.height = '100%';
-                }, 50);
+            kopi.style.top = rect.top + 'px';
+            kopi.style.left = rect.left + 'px';
+            kopi.style.width = rect.width + 'px';
+            kopi.style.height = rect.height + 'px';
+            
+            kopi.classList.add('active');
+            
+            setTimeout(() => {
+                kopi.style.top = '0';
+                kopi.style.left = '0';
+                kopi.style.transform = 'none';
+                kopi.style.width = '100%';
+                kopi.style.height = '100%';
+            }, 50);
 
-                const kopiImage = kopi.querySelector('.kopi-image');
-                kopiImage.style.backgroundImage = `url(${data.image})`;
-                kopiImage.style.cursor = 'pointer';
-                
-                kopiImage.onclick = function() {
-                    const fullImage = fullKopi.querySelector('.full-kopi-image');
-                    fullImage.src = data.image;
-                    fullKopi.classList.add('active');
-                };
+            const kopiImage = kopi.querySelector('.kopi-image');
+            kopiImage.style.backgroundImage = `url(${data.image})`;
+            kopiImage.style.cursor = 'pointer';
+            
+            kopiImage.onclick = function() {
+                const fullImage = fullKopi.querySelector('.full-kopi-image');
+                fullImage.src = data.image;
+                fullKopi.classList.add('active');
+            };
 
-                kopi.querySelector('.kopi-name').textContent = coffeeName;
-                kopi.querySelector('.taste').textContent = `Taste: ${data.taste}`;
-                if (data.caffeine) {
-                    kopi.querySelector('.caffeine').textContent = `Caffeine: ${data.caffeine}`;
-                }
-                if (data.origin) {
-                    kopi.querySelector('.origin').textContent = `Origin: ${data.origin}`;
-                }
-                
-                const ingredientsList = kopi.querySelector('.ingredients-list');
-                ingredientsList.innerHTML = '';
-                if (data.ingredients) {
-                    data.ingredients.forEach(item => {
-                        const li = document.createElement('li');
-                        li.textContent = item;
-                        ingredientsList.appendChild(li);
-                    });
-                }
-                
-                const equipmentList = kopi.querySelector('.equipment-list');
-                equipmentList.innerHTML = '';
-                if (data.equipment) {
-                    data.equipment.forEach(item => {
-                        const li = document.createElement('li');
-                        li.textContent = item;
-                        equipmentList.appendChild(li);
-                    });
-                }
-                
-                const stepsList = kopi.querySelector('.steps');
-                stepsList.innerHTML = '';
-                data.steps.forEach(step => {
+            kopi.querySelector('.kopi-name').textContent = coffeeName;
+            kopi.querySelector('.taste').textContent = `Taste: ${data.taste}`;
+            if (data.caffeine) {
+                kopi.querySelector('.caffeine').textContent = `Caffeine: ${data.caffeine}`;
+            }
+            if (data.origin) {
+                kopi.querySelector('.origin').textContent = `Origin: ${data.origin}`;
+            }
+            
+            const ingredientsList = kopi.querySelector('.ingredients-list');
+            ingredientsList.innerHTML = '';
+            if (data.ingredients) {
+                data.ingredients.forEach(item => {
                     const li = document.createElement('li');
-                    li.innerHTML = step;
-                    stepsList.appendChild(li);
+                    li.textContent = item;
+                    ingredientsList.appendChild(li);
                 });
             }
-        });
-    });
+            
+            const equipmentList = kopi.querySelector('.equipment-list');
+            equipmentList.innerHTML = '';
+            if (data.equipment) {
+                data.equipment.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = item;
+                    equipmentList.appendChild(li);
+                });
+            }
+            
+            const stepsList = kopi.querySelector('.steps');
+            stepsList.innerHTML = '';
+            data.steps.forEach(step => {
+                const li = document.createElement('li');
+                li.innerHTML = step;
+                stepsList.appendChild(li);
+            });
 
-    kopi.querySelector('.close-kopi').addEventListener('click', function() {
+           
+            if (data.video) {
+                
+                const existingVideoSection = kopi.querySelector('.video-section');
+                if (existingVideoSection) {
+                    existingVideoSection.remove();
+                }
+
+                const videoSection = document.createElement('div');
+                videoSection.className = 'video-section';
+                videoSection.innerHTML = `
+                    <h3>Video Tutorial</h3>
+                    <div class="video-container">
+                        <video controls poster="${data.videoPoster || data.image}">
+                            <source src="${data.video}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                `;
+                
+                
+                const stepsContainer = stepsList.parentElement;
+                stepsContainer.appendChild(videoSection);
+                
+                
+                const video = videoSection.querySelector('video');
+
+
+                video.style.width = '100%';
+                video.style.maxHeight = '300px'; 
+                video.style.height = 'auto';
+                video.style.borderRadius = '8px';
+                video.style.cursor = 'pointer';
+                video.style.objectFit = 'cover'; 
+                video.style.transition = 'transform 0.2s ease';
+
+
+
+                video.onclick = function() {
+                    if (video.requestFullscreen) {
+                        video.requestFullscreen();
+                    } else if (video.webkitRequestFullscreen) {
+                        video.webkitRequestFullscreen();
+                    } else if (video.msRequestFullscreen) {
+                        video.msRequestFullscreen();
+                    }
+                };
+            }
+        }
+    });
+});
+
+kopi.querySelector('.close-kopi').addEventListener('click', function() {
+    kopi.classList.remove('active');
+    kopi.style.top = '';
+    kopi.style.left = '';
+    kopi.style.width = '';
+    kopi.style.height = '';
+    kopi.style.transform = '';
+});
+
+kopi.addEventListener('click', function(e) {
+    if (e.target === kopi) {
         kopi.classList.remove('active');
         kopi.style.top = '';
         kopi.style.left = '';
         kopi.style.width = '';
         kopi.style.height = '';
         kopi.style.transform = '';
-    });
+    }
+});
 
-    kopi.addEventListener('click', function(e) {
-        if (e.target === kopi) {
-            kopi.classList.remove('active');
-            kopi.style.top = '';
-            kopi.style.left = '';
-            kopi.style.width = '';
-            kopi.style.height = '';
-            kopi.style.transform = '';
-        }
-    });
+const closeFullKopi = fullKopi.querySelector('.close-full-kopi');
+closeFullKopi.addEventListener('click', function() {
+    fullKopi.classList.remove('active');
+});
 
-    const closeFullKopi = fullKopi.querySelector('.close-full-kopi');
-    closeFullKopi.addEventListener('click', function() {
+fullKopi.addEventListener('click', function(e) {
+    if (e.target === fullKopi) {
         fullKopi.classList.remove('active');
-    });
+    }
+});
 
-    fullKopi.addEventListener('click', function(e) {
-        if (e.target === fullKopi) {
-            fullKopi.classList.remove('active');
-        }
-    });
 }); 
