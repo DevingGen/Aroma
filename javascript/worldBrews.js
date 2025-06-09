@@ -1,7 +1,6 @@
 
 var coffeeInfo = {
 
-    // pang asia
     'Vietnamese Ca Phe': {
         title: 'Vietnamese Cà Phê Sữa Đá',
         subtitle: 'Vietnamese Iced Coffee with Condensed Milk',

@@ -45,15 +45,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     document.body.appendChild(kopi);
     document.body.appendChild(fullKopi);
-    
-
-    //HALO HALO N 
 
     const coffeeData = {
         'Espresso': {
             image: 'PopularImages/espresso.jpg',
-            video: 'videos/SparkleVIDMP4.mp4',  // Mag aadd ka nito every data // gumawa ako ng video file
-            videoPoster: 'PopularImages/espresso.jpg', // ito pa di ko pa nalagay so need nya nasa pagitan ng image saka video poster 
+            video: 'videos/espresso.mp4',
+            videoPoster: 'PopularImages/espresso.jpg',
             taste: 'Rich, Strong, Bitter',
             caffeine: 'High (63mg)',
             origin: 'Italy, 1901',
@@ -81,6 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'Cappuccino': {
             image: 'PopularImages/cappuccino.png',
+            video: 'videos/cappuccino.mp4',
+            videoPoster: 'PopularImages/cappuccino.png',
             taste: 'Balanced, Creamy, Smooth',
             equipment: [
                 'Espresso Machine or Nespresso Machine',
@@ -103,6 +102,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'Latte': {
             image: 'PopularImages/latte.jpg',
+            video: 'videos/latte.mp4',
+            videoPoster: 'PopularImages/latte.jpg',
             taste: 'Smooth, Mellow, Creamy',
             equipment: [
                 'Espresso Machine or Coffee Maker',
@@ -125,6 +126,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'Americano': {
             image: 'PopularImages/americano.jpg',
+            video: 'videos/americano.mp4',
+            videoPoster: 'PopularImages/americano.jpg',
             taste: 'Smooth, Bold, Less Intense than Espresso',
             equipment: [
                 'Espresso Machine or Moka Pot',
@@ -148,6 +151,8 @@ document.addEventListener('DOMContentLoaded', function() {
          
         'Mocha': {
             image: 'PopularImages/mocha.jpg',
+            video: 'videos/mocha.mp4',
+            videoPoster: 'PopularImages/mocha.jpg',
             taste: 'Rich, Chocolatey, Sweet',
             caffeine: 'High (Approx. 130mg)',
             origin: 'Italy, 19th Century',
@@ -166,6 +171,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'Red Eye': {
             image: 'EspressoHOTimg/RedEyeCoffeeDrink.jpg',
+            video: 'videos/redeye.mp4',
+            videoPoster: 'EspressoHotimg/RedEyeCoffeeDrink.jpg',
             taste: 'Bold, Robust, Intense',
             caffeine: 'High (drip coffee + espresso shot)',
             origin: 'United States',
@@ -188,6 +195,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'Breve': {
             image: 'EspressoHOTimg/breve.jpg',
+            video: 'videos/breve.mp4',
+            videoPoster: 'EspressoHotimg/breve.jpg',
             taste: 'Rich, Creamy, Luxurious',
             caffeine: 'Medium to High (espresso with half-and-half)',
             origin: 'United States',
@@ -210,6 +219,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'Romano': {
             image: 'EspressoHOTimg/romanocoffee.jpg',
+            video: 'videos/romano.mp4',
+            videoPoster: 'EspressoHotimg/romanocoffee.jpg',
             taste: 'Bright, Citrusy, Bold',
             caffeine: 'High (espresso shot)',
             origin: 'Italy',
@@ -238,6 +249,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'Cold Brew': {
             image: 'images/coldbrew.webp',
+            video: 'videos/coldbrew.mp4',
+            videoPoster: 'images/coldbrew.webp',
             taste: 'Smooth, Mildly Sweet, Refreshing',
             caffeine: 'Medium to High (depends on steeping time and coffee-to-water ratio)',
             origin: 'United States (popularized, but method dates back centuries)',
@@ -267,6 +280,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         'Nitro Cold-Brew Coffee': {
             image: 'images/nitrocoldbrew.jpg',
+            video: 'videos/nitrocoldbrew.mp4',
+            videoPoster: 'images/nitrocoldbrew.jpg',
             taste: 'Smooth, Creamy, Velvety with a Slightly Sweet Finish',
             caffeine: 'High (cold brew concentrate infused with nitrogen)',
             origin: 'United States (modern innovation in cold brew coffee)',
@@ -290,6 +305,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'Iced Americano': {
             image: 'icedCoffeeImg/Iced_Americano.jpg',
+            video: 'videos/icedamericano.mp4',
+            videoPoster: 'icedCoffeeImg/Iced_Americano.jpg',
             taste: 'Bold, Strong, Clean with Fruity and Floral Notes',
             caffeine: 'Moderate to High (espresso-based)',
             origin: 'United States (inspired by American soldiers in WWII diluting espresso)',
@@ -313,6 +330,8 @@ document.addEventListener('DOMContentLoaded', function() {
             
         'Iced Latte': {
             image: 'icedCoffeeImg/IcedLatte.jpg',
+            video: 'videos/icedlatte.mp4',
+            videoPoster: 'icedCoffeeImg/IcedLatte.jpg',
             taste: 'Smooth, Creamy, Refreshing with Optional Sweetness',
             caffeine: 'Moderate (based on espresso amount)',
             origin: 'Italy (latte) adapted for iced, popularized globally',
@@ -337,11 +356,13 @@ document.addEventListener('DOMContentLoaded', function() {
             ]
         },
         'Iced Cappuccino': {
-    image: 'icedCoffeeImg/icedCappucino.jpg',
-    taste: 'Rich, Refreshing, Velvety with Subtle Sweetness',
-    caffeine: 'Moderate (from 1 shot of espresso)',
-    origin: 'Modern adaptation of Italian cappuccino for iced enjoyment',
-    equipment: [
+            image: 'icedCoffeeImg/icedCappucino.jpg',
+            video: 'videos/icedcappuccino.mp4',
+            videoPoster: 'icedCoffeeImg/icedCappucino.jpg',
+            taste: 'Rich, Refreshing, Velvety with Subtle Sweetness',
+            caffeine: 'Moderate (from 1 shot of espresso)',
+            origin: 'Modern adaptation of Italian cappuccino for iced enjoyment',
+            equipment: [
         'Espresso Machine or Nespresso Machine',
         'Milk Frother or Shaker',
         'Tall Glass'
@@ -366,6 +387,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         'Vietnamese Iced Coffee': {
             image: 'icedCoffeeImg/Vietnamesekopi.jpg',
+            video: 'videos/vietnamessecoffee.mp4',
+            videoPoster: 'icedCoffeeImg/Vietnamesekopi.jpg',
             taste: 'Bold, sweet, and intense with a smooth finish',
             caffeine: 'High (from strong brewed coffee or espresso)',
             origin: 'Vietnam – traditionally made with robusta coffee and sweetened condensed milk',
@@ -392,6 +415,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'Japanese Iced Coffee': {
             image: 'icedCoffeeImg/japanesekopi.webp',
+            video: 'videos/japaneseicedcoffee.mp4',
+            videoPoster: 'icedCoffeeImg/japanesekopi.webp',
             taste: 'Bright, clean, and refreshing with balanced acidity and deep flavor',
             caffeine: 'Moderate to high (depends on bean and ratio)',
             origin: 'Japan – made by brewing hot coffee directly over ice for immediate chilling and vibrant flavor',
@@ -419,6 +444,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'Iced Mocha': {
             image: 'icedCoffeeImg/IcedMocha.jpg',
+            video: 'videos/icedmocha.mp4',
+            videoPoster: 'icedCoffeeImg/IcedMocha.jpg',
             taste: 'Rich, creamy, and chocolatey with a refreshing iced coffee finish',
             caffeine: 'Moderate (about 96 mg per cup, depending on coffee strength)',
             origin: 'Inspired by classic coffeehouse mochas, adapted for iced enjoyment at home',
@@ -449,6 +476,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         'Irish Coffee': {
             image: 'PopularImages/irishcoffee.png',
+            video: 'videos/irishcoffee.mp4',
+            videoPoster: 'PopularImages/irishcoffee.png',
             taste: 'Warm, Bold, Slightly Sweet',
             caffeine: 'Moderate (Depends on coffee used)',
             origin: 'Ireland, 1940s',
@@ -477,6 +506,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         'Affogato': {
             image: 'PopularImages/affogato.png',
+            video: 'videos/affogato.mp4',
+            videoPoster: 'PopularImages/affogato.png',
             taste: 'Creamy, Bold, Slightly Sweet',
             caffeine: 'Moderate to High (depends on espresso shot)',
             origin: 'Italy',
@@ -507,6 +538,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'Macchiato': {
             image: 'PopularImages/macchiato.png',
+            video: 'videos/macchiato.mp4',
+            videoPoster: 'PopularImages/macchiato.png',
             taste: 'Bold, Rich, Balanced',
             caffeine: 'High (Approx. 150mg)',
             origin: 'Italy',
@@ -550,6 +583,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'Flat White': {
             image: 'images/flatwhite.webp',
+            video: 'videos/flatwhite.mp4',
+            videoPoster: 'images/flatwhite.webp',
             taste: 'Smooth, Creamy, Strong',
             caffeine: 'High',
             origin: 'Australia/New Zealand',
@@ -575,6 +610,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'Cortado': {
             image: 'EspressoHOTimg/cortado.jpg',
+            video: 'videos/cortado.mp4',
+            videoPoster: 'EspressoHOTimg/cortado.webp',
             taste: 'Bold, Smooth, Balanced',
             caffeine: 'Moderate (from espresso)',
             origin: 'Spain',
@@ -621,6 +658,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'Café con Leche': {
             image: 'EspressoHOTimg/cafeconleche.jpg',
+            video: 'videos/cafeconleche.mp4',
+            videoPoster: 'EspressoHOTimg/cafeconleche.jpg',
             taste: 'Rich, Smooth, Mellow',
             caffeine: 'Moderate (from espresso or stovetop brew)',
             origin: 'Spain / Latin America',
@@ -647,6 +686,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'Turkish Coffee': {
             image: 'PopularImages/turkishcoffee.png',
+            video: 'videos/turkishcoffee.mp4',
+            videoPoster: 'PopularImages/turkishcoffee.png',
             taste: 'Rich, Strong, Foamy',
             caffeine: 'High',
             origin: 'Turkey',
@@ -670,6 +711,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'Shakerato': {
     image: 'icedCoffeeImg/Shakerato.jpg',
+            video: 'videos/shakerato.mp4',
+            videoPoster: 'icedCoffeeImg/Shakerato.jpg',
     taste: 'Smooth, sweet, and frothy with a rich espresso flavor',
     caffeine: 'High (from espresso)',
     origin: 'Italy – a classic Italian iced coffee made by shaking espresso with ice and sugar to create a frothy, chilled beverage',
@@ -694,6 +737,8 @@ document.addEventListener('DOMContentLoaded', function() {
 },
 'Mazagran': {
     image: 'images/mazagran.jpg',
+            video: 'videos/mazagran.mp4',
+            videoPoster: 'images/mazagran.jpg',
     taste: 'Bright, tart, and refreshing with balanced sweetness and bold coffee flavor',
     caffeine: 'High (from concentrated coffee)',
     origin: 'France/Algeria – A historic coffee-lemonade hybrid said to originate from French colonial troops in Algeria, now a popular iced coffee drink with lemon juice and sugar',
@@ -723,6 +768,8 @@ document.addEventListener('DOMContentLoaded', function() {
 },
 'Chocolate Frappe': {
     image: 'images/choco-frappe.avif',
+    video: 'videos/chocofrappe.mp4',
+            videoPoster: 'images/choco-frappe.avif',
     taste: 'Rich, creamy, sweet, and chocolatey',
     caffeine: 'Moderate (from chocolate and possibly added coffee)',
     origin: 'Philippines / Nestlé Goodnes',
@@ -756,6 +803,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 'Mocha Frappe': {
     image: 'images/mochafrappe.webp',
+    video: 'videos/mochafrappe.mp4',
+            videoPoster: 'images/mochafrappe.webp',
     taste: 'Smooth, chocolatey, rich with a light froth',
     caffeine: 'Moderate (from NESCAFÉ® Classic instant coffee)',
     origin: 'Philippines / NESCAFÉ®',
@@ -788,6 +837,8 @@ document.addEventListener('DOMContentLoaded', function() {
 },
 'Strawberry Frappe': {
     image: 'images/strawberry-frapp.jpg',
+    video: 'videos/strawberryfrappe.mp4',
+            videoPoster: 'images/strawberry-frapp.jpg',
     taste: 'Sweet, creamy, fresh strawberry flavor with a smooth vanilla finish',
     caffeine: 'None',
     origin: 'California, USA',
@@ -818,6 +869,8 @@ document.addEventListener('DOMContentLoaded', function() {
 },
 'Oreo Frappe': {
     image: 'images/oreofrappe.jpg',
+    video: 'videos/oreofrappe.mp4',
+    videoPoster: 'images/oreofrappe.jpg',
     taste: 'Sweet, creamy, rich with chocolate and cookie flavor',
     caffeine: 'None',
     origin: 'American-inspired dessert drink',
@@ -842,7 +895,9 @@ document.addEventListener('DOMContentLoaded', function() {
     ]
 },
 'Matcha Frappe': {
-    image: 'images/mochafrappe.webp',
+    image: 'images/matchafrappe.webp',
+    video: 'videos/matchafrappe.mp4',
+    videoPoster: 'images/matchafrappe.webp',
     taste: 'Creamy, slightly sweet with a distinct earthy and grassy matcha flavor',
     caffeine: 'Contains caffeine from matcha green tea powder',
     origin: 'Inspired by Japanese matcha tea drinks',
@@ -971,7 +1026,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
 
                 video.style.width = '100%';
-                video.style.maxHeight = '300px'; 
+                video.style.maxHeight = '500px'; 
                 video.style.height = 'auto';
                 video.style.borderRadius = '8px';
                 video.style.cursor = 'pointer';
